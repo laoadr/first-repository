@@ -97,7 +97,7 @@ function newDate() {
   }
   
   let currentButton = document.querySelector("#current-location");
-  currentButton.addEventListener("submit", getLocation);
+  currentButton.addEventListener("click", getLocation);
   
   function newResult(event) {
     event.preventDefault();
