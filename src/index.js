@@ -77,10 +77,7 @@ function newDate() {
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed
     );
-    let icon = document.querySelector("#icon");
-    icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     console.log(response.data);
-    icon.setAttribute("alt", response.data.weather[0].description);
   }
   function showCurrentLocation(position) {
     let latitude = position.coords.latitude;
