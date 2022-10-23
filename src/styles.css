@@ -58,4 +58,6 @@
   h5 {
     color: pink;
   }
-  
+  .description {
+    text-transform:capitalize;
+  }

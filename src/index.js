@@ -77,11 +77,12 @@ function newDate() {
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed
     );
+    console.log(response.data);
   }
   function showCurrentLocation(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=72bb9dab46b9ec3d65f423c63f27a9b8&units=imperial`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=72bb9dab46b9ec3d65f423c63f27a9b8&units=imperial`;
     let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
     axios.get(apiUrl).then(displayNewWeatherCondition);
   }
