@@ -2,6 +2,9 @@
   h1 {
     color: pink;
   }
+  h2 {
+    text-transform: capitalize;
+  }
   h5 {
     text-align: center;
     color: pink;
