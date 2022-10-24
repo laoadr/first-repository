@@ -50,34 +50,41 @@ function newDate() {
   let submitButton = document.querySelector("#search-bar");
   submitButton.addEventListener("submit", newCity);
   //
-  function newFahrenheit() {
+  function newFahrenheit(event) {
+    event.preventDefault();
     let fahLink = document.querySelector("#main-temp");
-    fahLink.innerHTML = 71;
+    fahLink.innerHTML = Math.round(fahrenheitTemperature);
   }
   
   let changeFahrenheit = document.querySelector("#fahrenheit");
   changeFahrenheit.addEventListener("click", newFahrenheit);
   
-  function newCelsius() {
+  function newCelsius(event) {
+    event.preventDefault();
+    celsiusTemperature = (fahrenheitTemperature - 32) * 5 / 9;
     let celLink = document.querySelector("#main-temp");
-    celLink.innerHTML = 21;
+    celLink.innerHTML = Math.round(celsiusTemperature);
   }
-  
+  let celsiusTemperature = null;
   let changeCelsius = document.querySelector("#celsius");
   changeCelsius.addEventListener("click", newCelsius);
   
   //Week 5 Homework
   function displayNewWeatherCondition(response) {
-    document.querySelector("#current-city").innerHTML = response.data.name;
-    document.querySelector("#temperate").innerHTML = Math.round(
-      response.data.main.temp
-    );
-    document.querySelector("#description").innerHTML = response.data.weather[0].description;
-    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-    document.querySelector("#wind").innerHTML = Math.round(
-      response.data.wind.speed
-    );
-    console.log(response.data);
+    let temperature = document.querySelector("#main-temp");
+    let city = document.querySelector("#current-city");
+    let description = document.querySelector("#description");
+    let humidity = document.querySelector("#humidity");
+    let wind = document.querySelector("#wind");
+    
+    fahrenheitTemperature = response.data.main.temp;
+
+    temperature.innerHTML = Math.round(fahrenheitTemperature);
+    city.innerHTML = response.data.name;
+    description.innerHTML = response.data.weather[0].description;
+    humidity.innerHTML = response.data.main.humidity;
+    wind.innerHTML = Math.round(response.data.wind.speed);
+    console.log(response);
   }
   function showCurrentLocation(position) {
     let latitude = position.coords.latitude;
