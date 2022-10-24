@@ -27,6 +27,10 @@ function newDate() {
     ];
     let day = days[today.getDay()];
     let month = months[today.getMonth()];
+    let minutes = today.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
     return (
       `${day} ${month} ` +
       today.getDate() +
@@ -34,8 +38,7 @@ function newDate() {
       today.getFullYear() +
       " " +
       today.getHours() +
-      `:` +
-      today.getMinutes()
+      `:${minutes}`
     );
   }
   

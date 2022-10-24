@@ -1,4 +1,22 @@
-.form-group {
+
+  h1 {
+    color: pink;
+  }
+  h5 {
+    text-align: center;
+    color: pink;
+  }
+  .description {
+    text-transform:capitalize;
+  }
+  .city {
+    color: pink;
+  }
+  .col-2 {
+    display: block;
+    margin: 0 auto;
+  }
+  .form-group {
     position: relative;
     font-size: 15px;
     font-family: "Abyssinica SIL", serif;
@@ -47,17 +65,4 @@
     font-family: monospace;
     background-color: pink;
     font-size: 15px;
-  }
-  h5 {
-    text-align: center;
-  }
-  .col-2 {
-    display: block;
-    margin: 0 auto;
-  }
-  h5 {
-    color: pink;
-  }
-  .description {
-    text-transform:capitalize;
   }
