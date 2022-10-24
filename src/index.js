@@ -68,7 +68,7 @@ function newDate() {
     let celLink = document.querySelector("#main-temp");
     celLink.innerHTML = Math.round(celsiusTemperature);
   }
-  let celsiusTemperature = null;
+  let fahrenheitTemperature = null;
   let changeCelsius = document.querySelector("#celsius");
   changeCelsius.addEventListener("click", newCelsius);
   
