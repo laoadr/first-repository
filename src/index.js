@@ -79,6 +79,7 @@ function newDate() {
     let description = document.querySelector("#description");
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#wind");
+    let icon = document.querySelector("#icon");
     
     fahrenheitTemperature = response.data.main.temp;
 
@@ -87,6 +88,7 @@ function newDate() {
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
+    icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     console.log(response);
   }
   function showCurrentLocation(position) {
