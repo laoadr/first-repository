@@ -21,16 +21,16 @@
       <div class="card">
           <div class="card-body">
             <form class="newSearch" id="search-bar">
-          <div class="form-group">
+          <div class="form-group" id="col">
             <input type="text" class="form-control search-form" id="cityInput" placeholder="Enter a City or Zip Code"/>
             <input type="submit" value="Go" class="btn-secondary"/>
-            <input type="submit" value="Current Location" id="current-location"class="location"/>
+            <!-- <input type="submit" value="Current Location" id="current-location"class="location"/> -->
           </div>
         </form>
 <h1 type="dateName" id="special">
 </h1>
 <hr />
-<h2 class="city" id="current-city"></h2>
+<h2 id="city"></h2>
 <div class="description" id="description"></div>
 <h3><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="icon" class="float-left" />
     <div class="todayTemp" id="temperate">
@@ -48,15 +48,14 @@
       
     </div>
   </h4>
-
-          <div class="row">
+<div class="row">
             <script src="src/index.js"></script>
            
-            <div class="col-2 card" style="width: 15rem;">
+            <!-- <div class="col-2 card" style="width: 15rem;">
               <div class="card-body">
-                <h5 class="card-title">Friday</h5>
+                <h5 class="card-title" id="week-forecast"></h5>
                 <hr/>
-                <p class="card-text">
+                <p id="forecast">
                   Cloudy skies. High 72°F. Winds SW at 5 to 10mph.
                 </p>
                 <hr />
@@ -65,9 +64,9 @@
             </div>
             <div class="col-2 card" style="width: 15rem;">
               <div class="card-body">
-                <h5 class="card-title">Saturday</h5>
+                <h5 class="forecast">Saturday</h5>
                 <hr/>
-                <p class="card-text">
+                <p id="forecast">
                   Thunderstorms. High 71°F. Winds SSW at 6mph.
                 </p>
                 <hr />
@@ -76,9 +75,9 @@
             </div>
             <div class="col-2 card" style="width: 15rem;">
               <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
+                <h5 class="forecast">Sunday</h5>
                 <hr />
-                <p class="card-text">
+                <p id="forecast">
                   Partly cloudy. High 70°F. Winds SSW at 7mph.
                 </p>
                 <hr />
@@ -87,9 +86,9 @@
             </div>
             <div class="col-2 card" style="width: 15rem;">
               <div class="card-body">
-                <h5 class="card-title">Monday</h5>
+                <h5 class="forecast">Monday</h5>
                 <hr/>
-                <p class="card-text">
+                <p id="forecast">
                   Mostly sunny. High 77°F. Winds SW at 6mph.
                 </p>
                 <hr />
@@ -98,9 +97,9 @@
           </div>
             <div class="col-2 card" style="width: 15rem;">
               <div class="card-body">
-                <h5 class="card-title">Tuesday</h5>
+                <h5 class="forecast">Test</h5>
                 <hr/>
-                <p class="card-text">
+                <p id="forecast">
                  Sunny. High of 84°F. Winds SE at 5mph.
                 </p>
                 <hr/>
@@ -109,8 +108,72 @@
             </div>
           </div>
          
+        </div> 
+      </div> -->
+      <div class="weather-forecast" id="forecast">
+      <!-- <div class="row" row-cols-7>
+        <div class="col">
+          <div class="forecast-day">
+            <div class="weather-forecast-date">Th</div>
+            <img src="https://openweathermap.org/img/wn/01d@2x.png" alt width="42">
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max">75° |</span>
+              <span class="weather-forecast-temperature-min">59° </span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-day">
+            <div class="weather-forecast-date">Fri</div>
+            <img src="https://openweathermap.org/img/wn/04d@px.png" alt width="42">
+            <div class="weather-forecast-temperatures">          
+              <span class="weather-forecast-temperature-max">75° |</span>
+              <span class="weather-forecast-temperature-min">59° </span>
+    </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-day">
+            <div class="weather-forecast-date">Sat</div>
+            <img src="https://openweathermap.org/img/wn/01d@px.png" alt width="42">
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max">75° |</span>
+              <span class="weather-forecast-temperature-min">59° </span>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="forecast-day">
+            <div class="weather-forecast-date">Sun</div>
+            <img src="https://openweathermap.org/img/wn/01d@px.png" alt width="42">
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max">75° |</span>
+              <span class="weather-forecast-temperature-min">59° </span>
+          </div>
         </div>
       </div>
+      <div class="col">
+        <div class="forecast-day">
+          <div class="weather-forecast-date">Sun</div>
+          <img src="https://openweathermap.org/img/wn/01d@px.png" alt width="42">
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max">75° |</span>
+            <span class="weather-forecast-temperature-min">59° </span>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="forecast-day">
+        <div class="weather-forecast-date">Sun</div>
+        <img src="https://openweathermap.org/img/wn/01d@px.png" alt width="42">
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max">75° |</span>
+          <span class="weather-forecast-temperature-min">59° </span>
+      </div>
+    </div>
+  </div>
+</div> -->
+    </div>
     </div>
     <h5><em><a href="https://github.com/laoadr/first-repository" target="_blank">Open-source code.</a> Coded by Adrienne Lao</em></h5>
   </body>

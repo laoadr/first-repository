@@ -39,7 +39,7 @@
   .emoji {
     font-size: 40px;
   }
-  .location {
+  /* .location {
     background-color: pink;
     color: black;
     border-radius: 10px;
@@ -51,7 +51,7 @@
   .location:hover {
     background-color: gray;
     color: pink;
-  }
+  } */
   .btn-secondary {
     background-color: pink;
     color: black;

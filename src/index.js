@@ -44,7 +44,58 @@ function newDate() {
   
   let h1 = document.querySelector("h1");
   h1.innerHTML = newDate();
-  //
+  
+  //Week 8
+
+function displayForecast() {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row"> row-cols-7`;
+
+  forecast.forEach(function(forecastDay, index) {
+    if (index<6) {
+      forecastHTML = forecastHTML + `<div class = "col">
+      <div class = "forecast day">
+      <div class = "weather-forecast-date">${formatDay(
+        forecastDay.dt
+      )}</div>
+      <img src = "https://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png"
+      alt=""
+      width="42"
+    />
+    <div class = "weather-forecast-temperatures">
+      <span class = "weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}° | </span>
+      <span class = "weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}° | </span>
+      </div>
+      </div>
+      </div>`                                  
+    }
+  });
+  
+//   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+//   days.forEach(function (day) {
+//     forecastHTML = forecastHTML + `
+//     <div class="col-2">
+//    <div class="weather-forecast-date">${day}</div>
+//    <img src="htp://openweathermap.org/img/wn/50d@2px.png" alt="" width="42"/>
+//    <div class="weather-forecast-temperature">
+//    <span class="temperature-max" id="forecastTempMax">
+//  18°</span>
+//    <span class="temperature-min" id="forecastTempMin">
+//  17°
+//    </span>
+//    </div>
+//    </div>
+//    `;
+//   })
+  
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
   function newCity(event) {
     event.preventDefault();
     let cityInput = document.querySelector("#cityInput".value);
@@ -61,6 +112,7 @@ function newDate() {
   
   let changeFahrenheit = document.querySelector("#fahrenheit");
   changeFahrenheit.addEventListener("click", newFahrenheit);
+
   
   function newCelsius(event) {
     event.preventDefault();
@@ -72,30 +124,18 @@ function newDate() {
   let changeCelsius = document.querySelector("#celsius");
   changeCelsius.addEventListener("click", newCelsius);
   
-  //Week 5 Homework
   function displayNewWeatherCondition(response) {
-    let temperature = document.querySelector("#main-temp");
-    let city = document.querySelector("#current-city");
-    let description = document.querySelector("#description");
-    let humidity = document.querySelector("#humidity");
-    let wind = document.querySelector("#wind");
-    let icon = document.querySelector("#icon");
-    
     fahrenheitTemperature = response.data.main.temp;
-
-    temperature.innerHTML = Math.round(fahrenheitTemperature);
-    city.innerHTML = response.data.name;
-    description.innerHTML = response.data.weather[0].description;
-    humidity.innerHTML = response.data.main.humidity;
-    wind.innerHTML = Math.round(response.data.wind.speed);
-    icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    console.log(response);
+  
+    document.querySelector("#main-temp").innerHTML = Math.round(fahrenheitTemperature);
+    document.querySelector("#description").innerHTML = response.data.weather[0].description;
+    document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+    document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+    document.querySelector("#city").innerHTML = `${response.data.name}`;
+    document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   }
   function showCurrentLocation(position) {
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=72bb9dab46b9ec3d65f423c63f27a9b8&units=imperial`;
-    let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=72bb9dab46b9ec3d65f423c63f27a9b8&units=imperial`;
     axios.get(apiUrl).then(displayNewWeatherCondition);
   }
   
@@ -105,13 +145,12 @@ function newDate() {
   }
   
   function searchedCity(city) {
-    let apiKey = "72bb9dab46b9ec3d65f423c63f27a9b8";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=72bb9dab46b9ec3d65f423c63f27a9b8&units=imperial`;
     axios.get(apiUrl).then(displayNewWeatherCondition);
   }
   
-  let currentButton = document.querySelector("#current-location");
-  currentButton.addEventListener("click", getLocation);
+  // let currentButton = document.querySelector("#current-location");
+  // currentButton.addEventListener("click", getLocation);
   
   function newResult(event) {
     event.preventDefault();
@@ -123,4 +162,4 @@ function newDate() {
   searchResult.addEventListener("submit", newResult);
   
   searchedCity("Los Angeles");
-  
+  displayForecast();
