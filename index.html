@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Weather App</title>
@@ -23,6 +23,66 @@
             <form class="newSearch" id="search-bar">
           <div class="form-group" id="col">
             <input type="text" class="form-control search-form" id="city" placeholder="Enter a City or Zip Code"/>
+            <input type="submit" value="Go" class="btn-secondary"/>
+            <button type="submit" class="btn" id="current-id">Current Location</button>
+          </div>
+        </div>
+              </form>
+<h1 type="dateName" id="special">
+</h1>
+<hr />
+<h2 id="city"></h2>
+<div class="description" id="description"></div>
+<h3><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="icon" class="float-left" />
+    <div class="todayTemp" id="temperate">
+        <span class="newSearchedTemp" id="main-temp"></span> 
+        <span>
+          <a class="fahcels" id="fahrenheit" href="#">°F |</a> 
+          <a class="fahcels" id="celsius" href="#">°C</a
+        ></span>
+      </div>
+  </h3>
+  <h4>
+    <div class="row2" id="temperatureConditions">
+        <span>Humidity:<span id="humidity"></span>%</span>
+        <span>Wind:<span id="wind"></span>mph/h</span>
+    </div>
+  </h4>
+<div class="row">
+    <script src="src/index.js"></script>
+</div>
+<div class="weather-forecast" id="forecast">
+</div>
+    <h5><em><a href="https://github.com/laoadr/first-repository" target="_blank">Open-source code.</a> Coded by Adrienne Lao</em></h5>
+  </body>
+</div>
+</div>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+        </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+</head>
+  <body>
+    <div class="container entire-card" id="row">
+      <div class="card">
+          <div class="card-body">
+            <form class="newSearch" id="search-bar">
+          <div class="form-group" id="col">
+            <input type="text" class="form-control search-form" id="cityInput" placeholder="Enter a City or Zip Code"/>
             <input type="submit" value="Go" class="btn-secondary"/>
             <button type="submit" class="btn" id="current-id">Current Location</button>
           </div>

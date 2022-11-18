@@ -82,13 +82,18 @@
     padding: 10px;
   }
   .weather-forecast {
-    color: black;
+    color: white;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     text-align: center;
     margin-top: 25px;
+   
   }
-  .weather-forecast-min {
-    opacity: 0.6;
+  .forecast-day {
+    color: pink;
+    font-family: monospace;
+    font-size: 20px;
   }
-  
+#cityInput {
+  font-family: monospace;
+}
