@@ -1,9 +1,14 @@
 
   h1 {
     color: pink;
+    text-align: center;
   }
   h2 {
     text-transform: capitalize;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
   }
   h5 {
     text-align: center;
@@ -11,13 +16,7 @@
   }
   .description {
     text-transform:capitalize;
-  }
-  .city {
-    color: pink;
-  }
-  .col-2 {
-    display: block;
-    margin: 0 auto;
+    text-align: center;
   }
   .form-group {
     position: relative;
@@ -38,6 +37,7 @@
   }
   .emoji {
     font-size: 40px;
+    text-align: center;
   }
 
   .btn-secondary {
@@ -68,9 +68,27 @@
     font-family: monospace;
     background-color: pink;
     font-size: 15px;
+    text-align: center;
   }
   .fahcels {
     text-decoration: none;
     color: pink;
     font-size: 20px;
+    text-align: center;
   }
+  .forecast-day {
+    border: 1px solid #2c2d2e;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .weather-forecast {
+    color: black;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .weather-forecast-min {
+    opacity: 0.6;
+  }
+  
