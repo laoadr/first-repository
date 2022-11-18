@@ -39,28 +39,28 @@
   .emoji {
     font-size: 40px;
   }
-  /* .location {
-    background-color: pink;
-    color: black;
-    border-radius: 10px;
-    padding: 5.5px;
-    border-color: gray;
-    transition: 200ms ease-in-out;
-    font-family: monospace;
-  }
-  .location:hover {
-    background-color: gray;
-    color: pink;
-  } */
+
   .btn-secondary {
     background-color: pink;
     color: black;
     border-color: gray;
     font-family: monospace;
-    border-radius: 10px;
+    border-radius: 13px;
     padding: 5.5px;
   }
   .btn-secondary:hover {
+    color: pink;
+    background-color: gray;
+  }
+  .btn {
+    background-color: pink;
+    color: black;
+    border-color: gray;
+    font-family: monospace;
+    border-radius: 13px;
+    padding: 6px;
+  }
+  .btn:hover {
     color: pink;
     background-color: gray;
   }
